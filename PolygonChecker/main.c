@@ -23,6 +23,7 @@ int main() {
 			//printf_s("! %d\n", triangleSidesPtr[0]);
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
+			printf_s("% s\n", (findTriangleAngles(triangleSides[0], triangleSides[1], triangleSides[2])));
 			break;
 		case 2:
 			printf_s("Rectangle selected.\n");
