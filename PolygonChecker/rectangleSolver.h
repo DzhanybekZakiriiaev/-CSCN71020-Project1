@@ -5,7 +5,7 @@
 
 double getLength(POINT, POINT);
 
-bool isRectangle(POINT*);
+bool isRectangle(POINT* points, double* area, double* perimeter);
 
 bool isPerpendicular(POINT vectorOne, POINT vectorTwo);
 

@@ -26,7 +26,7 @@ POINT getVector(POINT pointOne, POINT pointTwo) {
     return vector;
 }
 
-void isRectangle(POINT* points) {
+bool isRectangle(POINT* points, double* area, double* perimeter) {
     bool isRectangle;
     int maxX = points[0].x, maxY = points[0].y;
     POINT p[RECTANGLE_POINTS];
@@ -62,15 +62,12 @@ void isRectangle(POINT* points) {
                          isPerpendicular(vectors[1], vectors[2]) &&
                          isPerpendicular(vectors[2], vectors[3]) &&
                          isPerpendicular(vectors[3], vectors[0]);
-    double perimeter = side[0] + side[1] + side[2] + side[3];
+    *perimeter = side[0] + side[1] + side[2] + side[3];
     if (perpendicular && (side[0] == side[2]) && (side[1] == side[3]) && (diagonal[0] == diagonal[1])) {
-        printf_s("Your figure is a rectangle.\n");
-        double area = side[0] * side[1];
-        printf_s("Your rectandles perimeter is: %lf\n", perimeter);
-        printf_s("Your rectandles area is: %lf\n", area);
+        *area = side[0] * side[1];
+        return true;
     }
     else {
-        printf_s("Your figure is not a rectangle.\n");
-        printf_s("Your shape's perimeter is: %lf\n", perimeter);
+        return false;
     }
 }
