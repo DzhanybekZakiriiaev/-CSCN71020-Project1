@@ -6,6 +6,10 @@
 #define RADIANS 57.8
 #define MAXCHAR 500
 #define M_PI 3.1415
+
+// CSCN71020 - Group 3 - Winter 2024
+// triangleSolver ADT - implementation
+
 //test branch
 //Below is the function to get the cos of side1
 float formulacos(int side1, int side2, int side3) {
@@ -31,13 +35,18 @@ float formulacos(int side1, int side2, int side3) {
 	}
 }
 
-
+// Takes all the inputted sides and checks to see what type of triangle it is
 char* analyzeTriangle(int side1, int side2, int side3) {
 	char* result = "";
 	if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
 		result = "Not a triangle";
 	}
-	else if (side1 == side2 && side1 == side3) {
+	else if (side1 > side2 && side1 > side3)
+	{
+		result = "Right angle triangle";
+	}
+	else if (side1 == side2 && side1 == side3) 
+	{
 		result = "Equilateral triangle";
 	}
 	else if ((side1 == side2 && side1 != side3) ||
@@ -45,7 +54,8 @@ char* analyzeTriangle(int side1, int side2, int side3) {
 	{
 		result = "Isosceles triangle";
 	}
-	else {
+	else 
+	{
 		result = "Scalene triangle";
 	}
 

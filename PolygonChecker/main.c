@@ -5,6 +5,10 @@
 #include "point.h"
 #include "triangleSolver.h"
 #include "rectangleSolver.h"
+
+// CSCN71020 - Group 3 - Winter 2024
+// main ADT - implementation
+
 int side = 0;
 
 int main() {
@@ -14,6 +18,7 @@ int main() {
 
 		int shapeChoice = printShapeMenu();
 
+		// Options for which shape to choose
 		switch (shapeChoice)
 		{
 		case 1:
@@ -52,6 +57,7 @@ int main() {
 	return 0;
 }
 
+// Welcome function
 void printWelcome() {
 	printf_s("\n");
 	printf_s(" **********************\n");
@@ -60,6 +66,7 @@ void printWelcome() {
 	printf_s(" **********************\n");
 }
 
+// Menu for the shapes function
 int printShapeMenu() {
 	printf_s("1. Triangle\n");
 	printf_s("2. Rectangle\n");
@@ -73,6 +80,7 @@ int printShapeMenu() {
 	return shapeChoice;
 }
 
+// Obtaining the triangle sides function
 int* getTriangleSides(int* triangleSides) {
 	printf_s("Enter the three sides of the triangle: ");
 	for (int i = 0; i < 3; i++)
@@ -84,6 +92,7 @@ int* getTriangleSides(int* triangleSides) {
 	return triangleSides;
 }
 
+// Obtaining the rectangle points function
 void getRectanglePoints(POINT* points) {
 	printf_s("Input for points in this format:\n");
 	printf_s("Point#: x y\n");

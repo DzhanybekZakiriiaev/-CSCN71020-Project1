@@ -2,6 +2,10 @@
 #include "CppUnitTest.h"
 #define MAXANGLEARRAY 3
 #define _CRT_SECURE_NO_WARNINGS
+
+// CSCN71020 - Group 3 - Winter 2024
+// TriangleAngleUnitTest ADT - implementation
+
 extern "C" float formulacos(int side1, int side2, int side3);
 extern "C" char* findTriangleAngles(int side1, int side2, int side3);
 //These unit tests will test the functionality of the triangle angle finder
