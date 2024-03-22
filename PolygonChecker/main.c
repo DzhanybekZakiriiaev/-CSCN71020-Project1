@@ -29,7 +29,17 @@ int main() {
 			printf_s("Rectangle selected.\n");
 			POINT rectanglePoints[RECTANGLE_POINTS];
 			getRectanglePoints(rectanglePoints);
-			isRectangle(rectanglePoints);
+			double area = 0.0;
+			double perimeter = 0.0;
+			if (isRectangle(rectanglePoints, &area, &perimeter)) {
+				printf_s("Your figure is a rectangle.\n");
+				printf_s("Your rectandles perimeter is: %lf\n", perimeter);
+				printf_s("Your rectandles area is: %lf\n", area);
+			}
+			else {
+				printf_s("Your figure is not a rectangle.\n");
+				printf_s("Your shape's perimeter is: %lf\n", perimeter);
+			}
 			break;
 		case 0:
 			continueProgram = false;
